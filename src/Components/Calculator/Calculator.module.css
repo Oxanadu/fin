@@ -1,0 +1,100 @@
+.calculator {
+    display: flex;
+    position: relative;
+    
+}
+.image {
+    width: 35%;
+    height: 75vh;
+    position: absolute;
+    margin-top: 15vh;
+    perspective: 3000px;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    margin-left: 10%;
+    transform-style: preserve-3d;
+    transition: 3s;
+}
+
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-image: url(/images/trasking.jpg);
+    background-repeat: no-repeat;
+
+    z-index: 5;
+    transform: rotateY(0deg);
+}
+.back {
+    background-image: url(/images/office.jpg);
+    background-repeat: no-repeat;
+  
+    transform: rotateY(180deg);
+}
+.calc {
+    width: 50%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-around;
+    margin-top: 15vh;
+    margin-left: 40%;
+}
+
+.office {
+display: block;
+}
+
+.trasking {
+    display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+    
+    .image {  
+        width: 45%;
+    }
+    .calc {
+        margin-left: 48%;
+    }
+
+ }
+
+ @media screen and (max-width: 768px) {
+    
+    .calculator {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .image {
+        display: none;
+    }
+
+    .calc {
+        width: 90%;
+        margin-left: 0;
+    }  
+
+ }
+
+ @media screen and (max-width: 320px) {
+    .calc {
+        width: 100%;
+    }
+
+ }

@@ -1,25 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import c from './App.css';
+import HomePage from './Components/HomePage/HomePage.jsx';
+import Services from './Components/Services/Services.jsx';
+import Calculator from './Components/Calculator/Calculator.jsx';
+import Сontacts from './Components/Сontacts/Сontacts.jsx';
+import { Route } from 'react-router-dom';
 
-function App() {
+
+const App = (props) => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className={c.App}>
+
+      <Route
+        exact
+        path="/"
+        render={() => (
+          <HomePage state={props.state} slideChange={props.slideChange} 
+          sliderBegin={props.sliderBegin}/>
+        )}
+      />
+      <Route
+        exact
+        path="/servises"
+        render={() => (
+          <Services state={props.state} changePage={props.changePage}
+            serviseGive={props.serviseGive} changeImg={props.changeImg} />
+        )}
+      />
+      <Route
+        exact
+        path="/calculator"
+        render={() => (
+          <Calculator state={props.state} mouseCalc={props.mouseCalc} getPrice={props.getPrice}/>
+        )}
+      />
+      <Route
+        exact
+        path="/contacts"
+        render={() => (
+          <Сontacts state={props.state} giveForm={props.giveForm} messegeSend={props.messegeSend}/>
+        )}
+      />
+
+
     </div>
+
+
   );
 }
 

@@ -1,0 +1,121 @@
+.calctime {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ 
+}
+
+.amount_comp,
+.amount_serv {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.title,
+.calc_text,
+.serv_text,
+.result_text {
+    font-size: 26px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 10%;
+}
+
+.title {
+    color: #ded3f5;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.input_comp,
+.input_serv {
+    width: 20%;
+    display: block;
+}
+
+.result  {
+    width: 93%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+}
+.result_text {
+    width: 25%;
+    text-align: center;
+    font-size: 26px;
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sum_btn {
+   width: 25%;
+   height: 5vh;
+  background-color: red;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  position: absolute;
+ 
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .title,
+    .calc_text,
+    .serv_text {
+    font-size: 20px;
+    }
+
+    .sum_btn  {
+        font-size: 18px;
+    }
+
+ }
+
+ @media screen and (max-width: 570px) {
+    .title,
+    .calc_text,
+    .serv_text {
+        font-size: 16px;
+    }
+
+    .sum_btn  {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+   
+    .sum_btn  {
+        font-size: 12px;
+    }
+
+    .input_comp,
+    .input_serv {
+        width: 45px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+   
+    .title,
+    .calc_text,
+    .serv_text {
+        font-size: 14px;
+    }
+
+ 
+}

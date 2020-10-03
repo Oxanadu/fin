@@ -1,0 +1,20 @@
+.nav_burger {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    opacity: 0.8;
+
+}
+.nav_burger a {
+    color: #fff;
+    text-decoration-line: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    text-align: center;
+  
+  }
+  .nav_burger a:hover {
+    color: #ded3f5
+  }

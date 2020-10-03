@@ -1,0 +1,200 @@
+.сontacts {
+    display: flex;
+}
+
+.contacts_left {
+    width: 50%;
+    position: relative;
+}
+
+form {
+    width: 120%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #020035;
+    position: absolute;
+    margin-left: 15%;
+    box-shadow: 0 0 10px #020022;
+}
+
+.form_box {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}    
+
+.input_name,
+.input_tel,
+.input_mail,
+.input_company,
+.input_message,
+.input_submit {
+    width: 100%;
+    margin-top: 4vh;
+}
+input {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+p {
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 1vh;
+}
+
+input,
+.button {
+    width: 100%;
+    height: 4vh;
+    border: none;
+}
+
+textarea {
+    width: 100%;
+    height: 15vh;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
+
+.button {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    background-color: red;
+    border: none;
+    outline: none;
+}
+
+.erorr_tel,
+.erorr_email {
+    font-size: 18px;
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    display: none;
+}
+
+.contacts_right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25vh;
+    margin-left: 50%;
+    position: absolute;
+}
+
+.contacts_right_title,
+.content_right_tel {
+    font-size: 40px;
+    color: #ded3f5;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content_right_text,
+.content_right_name {
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 2vh;
+    font-style: italic;
+}
+
+
+
+@media screen and (max-width: 1350px) {
+    
+    .contacts_right_title,
+    .content_right_tel {  
+        font-size: 30px;
+    }
+    
+ }
+@media screen and (max-width: 1012px) {
+   
+    .contacts_right_title,
+    .content_right_tel,
+    .content_right_name {  
+        font-size: 22px;
+    }
+
+    .content_right_text {
+        font-size: 18px;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+   
+    .сontacts {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contacts_right {
+        width: 90%;
+        align-items: center;
+        margin-top: 18vh;
+        margin-left: 0;
+    
+    }
+    .content_right_text {
+        display: none;
+    }
+
+    .content_right_tel {
+       padding-top: 2vh; 
+    }
+    
+    .contacts_left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        width: 90%;
+        height: 60vh;
+        margin-left: 0;
+        margin-top: 35vh;
+
+    }
+    .input_name,
+    .input_tel,
+    .input_mail,
+    .input_company,
+    .input_message,
+    .input_submit {
+        margin-top: 2vh;
+    }
+
+    textarea {
+        height: 7vh;
+    }
+   
+}
+
+@media screen and (max-width: 375px) {
+    input {
+        font-size: 16px;
+    }
+    input {
+        font-size: 16px;
+    }
+
+    .contacts_right_title,
+    .content_right_tel,
+    .content_right_name {  
+        font-size: 16px;
+    }
+
+}
