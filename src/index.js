@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import state, { subscribe, changePage, serviseGive, changeImg, slideChange, 
-  sliderBegin, giveForm, messegeSend, mouseCalc, getPrice} 
+import state, { subscribe, changePage, serviseGive, changeImg, slideChange, //  импорт содержимого state
+  sliderBegin, giveForm, messegeSend, mouseCalc, getPrice, getMenu} 
 from './Redux/state'
 
-let renderReload = () => {
+let renderReload = () => { //фун-ия для перерисовки компоненты при изменении state
   ReactDOM.render(
 
     <BrowserRouter>
@@ -17,10 +17,11 @@ let renderReload = () => {
       changeImg={changeImg} 
       slideChange={slideChange}
       sliderBegin={sliderBegin}
-      giveForm={giveForm}
+      giveForm={giveForm}                            // проброс через props
       messegeSend={messegeSend}
       mouseCalc={mouseCalc}
-      getPrice={getPrice}/>
+      getPrice={getPrice}
+      getMenu={getMenu}/>
     </BrowserRouter>,
 
     document.getElementById('root')

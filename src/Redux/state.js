@@ -5,8 +5,8 @@ let renderReload = () => {
 }
 
 const state = {
-    state: [true, false, false],
-    img: ['comp', 'touch', 'fase'],
+    state: [true, false, false], //состояние иконок Servises
+    img: ['comp', 'touch', 'fase'], 
     services: ['IT аутсорсинг', 'Контроль доступа', 'Видеоаналитика'],
     imgLarge1: ['service1', 'service2', 'service3', 'service4'],
     imgLarge2: ['accesscontrol1', 'accesscontrol2', 'accesscontrol3', 'accesscontrol4'],
@@ -26,11 +26,12 @@ const state = {
         message: ''
     },
     priceIt: ['buttonOn', 0],
-    priceTime: ['buttonOn', 0]
+    priceTime: ['buttonOn', 0],
+    menu: false
 }
 let startMarg = 0;
 let i = 0;
-export const sliderBegin = () => {
+export const sliderBegin = () => { //функция для запуска слайдера Home в момент первой отрисовки запускается useEffect
     if (!document.getElementById(`slide`)) return;
     let slide = document.getElementById(`slide`);
     let text = document.getElementById(`text`);
@@ -55,20 +56,21 @@ export const sliderBegin = () => {
     }, 1000);
 };
 
-export const slideChange = (e) => {
+export const slideChange = (e) => {                                     // для запуска слайдера в ручную 
     let index = e.currentTarget;
     document.querySelectorAll('.step').forEach((value, i) => {
 
-        if (+index.id === i) value.style.backgroundColor = '#020035';
-        else value.style.backgroundColor = '#ded3f5';
+        if (+index.id === i) value.style.backgroundColor = '#020035'; // цвет при наведении
+        else value.style.backgroundColor = '#ded3f5';                   // цвет неактивный
 
     });
 
-    document.getElementById(`slide`).style.marginLeft = `${index.id * (-100)}%`;
+    document.getElementById(`slide`).style.marginLeft = `${index.id * (-100)}%`; //изменение контента в зависимости от id
     document.getElementById(`text`).textContent = textHome.titleHome[index.id];
     document.getElementById(`text2`).textContent = textHome.textDiscr[index.id];
 }
-export const changePage = (e) => {
+
+export const changePage = (e) => {                  // при нажатии иконок задает начальные картинки 
     state.state.forEach((value, index) => {
         if (index === +e.currentTarget.id) {
             state.state[index] = true;
@@ -93,7 +95,7 @@ export const changePage = (e) => {
     renderReload()
 
 }
-export const serviseGive = (imgEnd) => {
+export const serviseGive = (imgEnd) => {        //в момент отрисовки (useEffect) меняется margin
     let a = document.getElementById('outsorsing')
     a.style.marginLeft = imgEnd;
     setTimeout(() => {
@@ -102,11 +104,11 @@ export const serviseGive = (imgEnd) => {
     }, 700);
 
 }
-export const changeImg = (e) => {
+export const changeImg = (e) => {               
     state.imgStart = e.currentTarget.id;
-    state.textStart = +state.imgStart.match(/\d+/g) - 1;
+    state.textStart = +state.imgStart.match(/\d+/g) - 1;  // получение цифры из названия картинки
     document.querySelectorAll('.sliders').forEach((value, index) => {
-        if (value.id === state.imgStart) e.currentTarget.style.opacity = 0.4;
+        if (value.id === state.imgStart) e.currentTarget.style.opacity = 0.3;
         else value.style.opacity = 1;
     })
     state.imgEnd = 0;
@@ -115,7 +117,7 @@ export const changeImg = (e) => {
 
 export const giveForm = () => {
     const emailValid = /^[^@]+@[^@.]+\.[^@]+$/;
-    const telValid = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+    const telValid = /^(\+)(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
 
 
     state.form.tel = document.getElementById('tel').value;
@@ -130,12 +132,12 @@ export const giveForm = () => {
             state.form.email = document.getElementById('email').value
             state.form.company = document.getElementById('company').value;
             state.form.message = document.getElementById('message').value;
-            document.getElementById('send').style.display = 'block';
+            document.getElementById('send').style.display = 'block';  // popap окно
             document.getElementById('erremail').style.display = 'none';
         }
     }
 }
-export const messegeSend = () => {
+export const messegeSend = () => { //очитска формы закрытием
     document.getElementById('send').style.display = 'none';
     document.getElementById('name').value = '';
     document.getElementById('tel').value = '';
@@ -144,21 +146,23 @@ export const messegeSend = () => {
     document.getElementById('message').value = '';
     renderReload();
 }
-export const mouseCalc = (e) => {
+
+export const mouseCalc = (e) => { // изменение картинки при наведении на текст
     if (e.currentTarget.id === 'imgCalcTime')
         document.getElementById('calcImg').style.transform = 'rotateY(0deg)'
     else document.getElementById('calcImg').style.transform = 'rotateY(180deg)'
 }
-export const getPrice = (e) => {
+
+export const getPrice = (e) => {                // работа калькулятора
     let a;
-    e.currentTarget.style.marginRight = '30%'
+    e.currentTarget.style.marginRight = '30%'  // изменение положения кнопки
     if (e.currentTarget.id === 'button1') {
         a = document.getElementById('comp1').value * 10 +
             document.getElementById('serv1').value * 40
         if (a) state.priceIt[1] = a;
         renderReload();
     } else {
-        if (+document.getElementById('serv2').value > 0 && +document.getElementById('serv2').value < 11) {
+        if (+document.getElementById('serv2').value > 0 && +document.getElementById('serv2').value < 11) { 
             a = document.getElementById('comp2').value * 50 +
                 document.getElementById('serv2').value * 12;
             if (a) state.priceTime[1] = a;
@@ -166,6 +170,13 @@ export const getPrice = (e) => {
         }
     }
 }
+
+export const getMenu = () => { //кнопка меню
+    state.menu = !state.menu;
+    (state.menu === true) ? document.getElementById('nav').style.display='block' : document.getElementById('nav').style.display='none'
+ 
+}
+
 
 export const subscribe = (observe) => {
     renderReload = observe

@@ -7,8 +7,8 @@
   align-items: center;
   position: absolute;
   z-index: 5;
-  
-  }
+}
+
 .button_item {
   text-align: center;
   cursor: pointer;
@@ -23,5 +23,38 @@
   color: #000068;
   font-weight: bold;
   padding-top: 3vh;
+}
 
+@media screen and (max-width: 900px) {
+  .button {
+    width: 25%;
+  }
+  .span {
+    display: block;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    width: 100%;
+    height: 35vh;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 65vh;
+    align-items: flex-end;
+    background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .button_item {
+    margin-bottom: 8vh;
+  }
+  .button_item {
+    width: 70%;
+  }
+  .span {
+    font-size: 14px;
+  }
 }

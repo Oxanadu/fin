@@ -14,11 +14,11 @@ const App = (props) => {
     <div className={c.App}>
 
       <Route
-        exact
+        exact //точное совпадение адреса
         path="/"
         render={() => (
           <HomePage state={props.state} slideChange={props.slideChange} 
-          sliderBegin={props.sliderBegin}/>
+          sliderBegin={props.sliderBegin} getMenu={props.getMenu}/>
         )}
       />
       <Route
@@ -26,28 +26,24 @@ const App = (props) => {
         path="/servises"
         render={() => (
           <Services state={props.state} changePage={props.changePage}
-            serviseGive={props.serviseGive} changeImg={props.changeImg} />
+            serviseGive={props.serviseGive} changeImg={props.changeImg} getMenu={props.getMenu} />
         )}
       />
       <Route
         exact
         path="/calculator"
         render={() => (
-          <Calculator state={props.state} mouseCalc={props.mouseCalc} getPrice={props.getPrice}/>
+          <Calculator state={props.state} mouseCalc={props.mouseCalc} getPrice={props.getPrice} getMenu={props.getMenu}/>
         )}
       />
       <Route
         exact
         path="/contacts"
         render={() => (
-          <Сontacts state={props.state} giveForm={props.giveForm} messegeSend={props.messegeSend}/>
+          <Сontacts state={props.state} giveForm={props.giveForm} messegeSend={props.messegeSend} getMenu={props.getMenu}/>
         )}
       />
-
-
     </div>
-
-
   );
 }
 

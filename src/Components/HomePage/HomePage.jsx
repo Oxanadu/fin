@@ -10,8 +10,7 @@ const HomePage = (props) => {
   return (
     <div className={c.home_page}>
       <Logo />
-      <Nav />
-      <div className="nav_phone"></div>
+      <Nav state={props.state} getMenu={props.getMenu}/>
       <Slider state={props.state} sliderBegin={props.sliderBegin}/>
       <NavLink to="/servises">
           <button className={c.button}>Подробнее</button>

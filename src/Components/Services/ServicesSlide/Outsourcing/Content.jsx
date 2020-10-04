@@ -7,14 +7,10 @@ const Content = (props) => {
   return (
     <div className={c.container}>
       <Wraplarge
-        state={props.state}
-        changePage={props.changePage}
-        serviseGive={props.serviseGive}
+        state={props.state} 
       />
       <Wrapsmall
         state={props.state}
-        changePage={props.changePage}
-        serviseGive={props.serviseGive}
         changeImg={props.changeImg}
       />
     </div>

@@ -2,11 +2,10 @@ import React, { useEffect} from "react";
 import c from "./Slider.module.css";
 
 const Slider = (props) => {
-  useEffect(() => {
+  useEffect(() => { // hook запускает после отрисовки компоненты
     props.sliderBegin()
   })
   
-
   return (
     <div className={c.slider}>
       <div className={c.section_sliders}>
@@ -19,7 +18,7 @@ const Slider = (props) => {
         </div>
       </div>
       <div className={c.content} >
-          <h2 id="text"></h2>
+          <h2 id="text">''</h2>
           <span id="text2"></span>
        </div>
     </div>

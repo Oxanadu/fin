@@ -6,7 +6,7 @@ import Calctime from './Calctime'
 import c from './Calculator.module.css'
 
 const Calculator = (props) => {
-    let ref = useRef();
+    let ref = useRef();  //hook для изменения стиля
     useEffect (() => {
         ref.current.style.transform =  'rotateY(180deg)';
     })
@@ -20,12 +20,11 @@ const Calculator = (props) => {
                     <div className={c.back}></div>
                 </div>
             </div>
-            <Nav />
+            <Nav state={props.state} getMenu={props.getMenu} />
             <div className={c.calc}>
-            <Calcit state={props.state} mouseCalc={props.mouseCalc} getPrice={props.getPrice}/>
-            <Calctime state={props.state} mouseCalc={props.mouseCalc} getPrice={props.getPrice}/>
-            </div>
-            
+                <Calcit state={props.state} mouseCalc={props.mouseCalc} getPrice={props.getPrice}/>
+                <Calctime state={props.state} mouseCalc={props.mouseCalc} getPrice={props.getPrice}/>
+            </div>    
         </div>
     )
 }

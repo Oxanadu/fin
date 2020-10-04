@@ -10,7 +10,7 @@ const Services = (props) => {
     <div className={c.sliders}>
       <div className={c.nav_wrap}>
         <Logo />
-        <Nav />
+        <Nav state={props.state} getMenu={props.getMenu}/>
       </div>
       <Button state={props.state} changePage={props.changePage} />
       <Outsourcing

@@ -3,14 +3,22 @@
   height: 10vh;
   text-align: center;
   margin-top: 5vh;
-  }
-  
-  @media screen and (max-width: 375px) {
-    .logo {
-        height: 7vh;
-    }
+}
 
-    .logo img {
-        width: 60%;
-    }
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 30%;
+    text-align: start;
+    margin-left: 60%;
   }
+}
+
+@media screen and (max-width: 565px) {
+  .logo {
+    height: 7vh;
+    margin-left: 70%;
+  }
+  .logo img {
+    width: 60%;
+  }
+}

@@ -8,7 +8,7 @@ import c from "./Outsourcing.module.css";
 
 const Wraplarge = (props) => {
  
-  let serv = textOutsourcing;
+  let serv = textOutsourcing; 
   switch (true) {
     case props.state.state[0]:
       serv = textOutsourcing;
@@ -24,18 +24,15 @@ const Wraplarge = (props) => {
     default:
       console.log("errror");
   }
-
   
   return (
     <div className={c.sliders_wrap_large}>
       <div className={c.content}>
-      <h2 className={c.servises_title}>{serv.titleHome[props.state.textStart]}</h2> 
-      <span className={c.servises_content}>{serv.textDiscr[props.state.textStart]}</span>
-        
+        <h2 className={c.servises_title}>{serv.titleHome[props.state.textStart]}</h2> 
+        <span className={c.servises_content}>{serv.textDiscr[props.state.textStart]}</span> 
       </div>
-
       <div className={c.sliders_large_block}>
-      <img src={`/images/${props.state.imgStart}.jpg`} alt=""/>
+        <img src={`/images/${props.state.imgStart}.jpg`} alt="images"/>
       </div>
     </div>
   );

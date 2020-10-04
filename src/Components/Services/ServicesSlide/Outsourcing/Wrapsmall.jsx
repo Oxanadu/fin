@@ -24,11 +24,10 @@ const Wrapsmall = (props) => {
   let getServiseImg = servise.map ((value, index) => {
  
     return(
-      <div onClick={props.changeImg}  className="sliders" id={id+(index+1)} key={value}>
+      <div onClick={props.changeImg} className="sliders" id={id+(index+1)} key={value}>
           <img src={`/images/${value}.jpg`} alt=""  />
         </div>
     )
-    
   })
 
   return (

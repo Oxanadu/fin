@@ -4,15 +4,14 @@
   display: flex;
   position: relative;
 }
-  
+
 .logo {
   width: 50%;
-  
 }
 
-.logo_img{
+.logo_img {
   margin-top: 8vh;
-margin-left: 9vh;
+  margin-left: 9vh;
 }
 
 .button {
@@ -32,12 +31,10 @@ margin-left: 9vh;
   position: absolute;
 }
 
-
 @media screen and (max-width: 1280px) {
-   .button {
-     margin-left: -20%;
-   }
-   
+  .button {
+    margin-left: -20%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -45,36 +42,25 @@ margin-left: 9vh;
     flex-direction: column;
     align-items: center;
   }
-
-
-
   .button {
     margin-top: -15vh;
     margin-left: 20%;
   }
-  
 }
 
 @media screen and (max-width: 600px) {
   .button {
     font-size: 18px;
-   margin-left: 10%;
+    margin-left: 10%;
   }
-   
 }
 
 @media screen and (max-width: 425px) {
   .button {
     font-size: 16px;
     margin-left: 0%;
-  }
-}
+    margin-top: -2vh;
 
-
-@media screen and (max-width: 375px) {
-  .button {
-    
-    margin-top: -10vh;
   }
 }
 

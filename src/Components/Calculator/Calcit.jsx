@@ -5,7 +5,7 @@ const Calcit = (props) => {
     return (
         <div onMouseOver={props.mouseCalc} className={c.calcit} id="imgCalcCit">
             <div  className={c.title }>
-            Калькулятор стоимости поддержки
+                Калькулятор стоимости поддержки
             </div>
             <div className={c.amount_comp}>
                 <div className={c.calc_text}>
@@ -20,7 +20,6 @@ const Calcit = (props) => {
                 <input className={c.input_serv} type="text" name ="number" id="serv1"/>
             </div>
             <div className={c.result}>
-               
                 <div className={c.result_text}>
                     {props.state.priceIt[1]}руб
                 </div> 
