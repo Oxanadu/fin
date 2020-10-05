@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Oxanadu/fin.git/precache-manifest.3f17a02811edf71e726b033d3ecc878d.js"
+  "/Oxanadu/fin.git/precache-manifest.3e93e9953dd878235f7a05dc33089e56.js"
 );
 
 self.addEventListener('message', (event) => {
